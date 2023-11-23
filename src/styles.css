@@ -6,35 +6,70 @@ body {
   border: none;
   max-width: 600px;
   font-family: "Roboto", sans-serif;
-  margin: 50px auto;
+  margin: 45px auto;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 30px;
   padding-bottom: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
+h1 {
+  margin: 0;
+  line-height: 48px;
+  font-size: 38px;
+}
 #search-form {
   margin-bottom: 10px;
   font-family: Arial;
 }
 #search-input {
-  width: 80%;
-  background-color: #f9f7fe;
-  padding: 10px;
+  width: 70%;
+  background-color: #e8f0fe;
+  padding: 15px 20px;
   border: none;
   border-radius: 5px;
+  font-size: 15px;
 }
-.btn {
-  background-color: #885df1;
+.button {
+  background: #885df1;
+  padding: 15px 30px;
   border: none;
+  font-size: 16px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: white;
 }
 .main {
-  margin-bottom: 50px;
+  margin-top: 30px 0;
   display: flex;
+  justify-content: space-between;
 }
-.temperature-element {
-  margin-top: 50px;
+.description {
+  color: #aeabb8;
+}
+.color {
+  color: #f65785;
+  font-weight: bold;
+}
+.value {
+  font-size: 90px;
+  font-weight: bold;
+  padding-left: 10px;
+  line-height: 88px;
+}
+
+.icon {
+  font-size: 50px;
+}
+.units {
+  margin-top: 6px;
+  line-height: 27px;
+  font-size: 28px;
 }
 .footer {
-  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  padding: 30px 0 0 0;
+  text-align: center;
+  border-top: 1px solid #f9f7fe;
 }

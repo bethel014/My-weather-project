@@ -18,6 +18,10 @@ h1 {
   line-height: 48px;
   font-size: 38px;
 }
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding: 0 0 30px 0;
+}
 #search-form {
   margin-bottom: 10px;
   font-family: Arial;

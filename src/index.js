@@ -42,9 +42,14 @@ let newTime = document.querySelector("#timeElement");
 newTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 function getTemp(response) {
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature-value");
   let temperature = Math.round(response.data.temperature.current);
   let cityInputElement = document.querySelector("#cityElement");
   cityInputElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${response.data.wind.speed}km/hr`;
 }

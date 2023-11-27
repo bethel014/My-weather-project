@@ -25,7 +25,6 @@ let days = [
 ];
 
 let day = days[date.getDay()];
-console.log(day);
 
 if (minutes < 10) {
   minutes = `0${minutes}`;
@@ -37,3 +36,9 @@ if (hour < 10) {
 
 let newTime = document.querySelector("#timeElement");
 newTime.innerHTML = `${day} ${hour}:${minutes}`;
+
+function getCity(city) {
+  let apiKey = "8fa2ab32e21db893o44btbabb185f06b";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metrics`;
+  axios.get(apiUrl).then(getTemp);
+}

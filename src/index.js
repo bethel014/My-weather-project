@@ -1,15 +1,3 @@
-function searchCity(event) {
-  event.preventDefault();
-
-  let cityInput = document.querySelector("#search-input");
-  let city = cityInput.value;
-
-  let apiKey = "8fa2ab32e21db893o44btbabb185f06b";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metrics`;
-
-  axios.get(apiUrl).then(getTemp);
-}
-
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", searchCity);
 
@@ -41,6 +29,21 @@ if (hour < 10) {
 let newTime = document.querySelector("#timeElement");
 newTime.innerHTML = `${day} ${hour}:${minutes}`;
 
+function searchCity(event) {
+  event.preventDefault();
+
+  let cityInput = document.querySelector("#search-input");
+
+  showCity(cityInput.value);
+}
+
+function showCity(city) {
+  let apiKey = "8fa2ab32e21db893o44btbabb185f06b";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metrics`;
+
+  axios.get(apiUrl).then(getTemp);
+}
+
 function getTemp(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature-value");
@@ -52,4 +55,8 @@ function getTemp(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${response.data.wind.speed}km/hr`;
+  let iconElement = document.querySelector(".icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
+
+showCity("Lisbon");

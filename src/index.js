@@ -39,13 +39,12 @@ function searchCity(event) {
 
 function showCity(city) {
   let apiKey = "8fa2ab32e21db893o44btbabb185f06b";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metrics`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
   axios.get(apiUrl).then(getTemp);
 }
 
 function getTemp(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature-value");
   let temperature = Math.round(response.data.temperature.current);
   let cityInputElement = document.querySelector("#cityElement");
@@ -55,6 +54,8 @@ function getTemp(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${response.data.wind.speed}km/hr`;
+  let conditionElement = document.querySelector("#condition");
+  condition.innerHTML = response.data.condition.description;
   let iconElement = document.querySelector(".icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }

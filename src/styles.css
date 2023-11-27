@@ -14,7 +14,7 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
 h1 {
-  margin: 0;
+  margin: 30px 0 15px 0;
   line-height: 48px;
   font-size: 38px;
 }
@@ -28,7 +28,7 @@ header {
 }
 #search-input {
   width: 70%;
-  background-color: #f9f7fe;
+  background-color: rgb(247, 245, 255);
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
@@ -63,12 +63,14 @@ header {
 }
 
 .icon {
-  font-size: 50px;
+  font-size: 20px;
+  position: relative;
+  top: 20px;
 }
 .units {
-  margin-top: 6px;
-  line-height: 27px;
   font-size: 28px;
+  position: absolute;
+  top: 190px;
 }
 .footer {
   color: rgba(0, 0, 0, 0.6);
